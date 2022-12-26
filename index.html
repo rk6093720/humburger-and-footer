@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   
+    body {
+        margin: 0;
+        font-family: Helvetica, sans-serif;
+        background-color: #f4f4f4;
+      }
+      
+      a {
+        color: #000;
+      }
+      
+      /* header */
+      
+      .header {
+        background-color: #fff;
+        box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+        position: fixed;
+        width: 100%;
+        z-index: 3;
+      }
+      
+      .header ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        background-color: #fff;
+      }
+      
+      .header li a {
+        display: block;
+        padding: 20px 20px;
+        border-right: 1px solid #f4f4f4;
+        text-decoration: none;
+      }
+      
+      .header li a:hover,
+      .header .menu-btn:hover {
+        background-color: #f4f4f4;
+      }
+      
+      .header .logo {
+        display: block;
+        float: left;
+        font-size: 2em;
+        padding: 10px 20px;
+        text-decoration: none;
+      }
+      
+      /* menu */
+      
+      .header .menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+      }
+      
+      /* menu icon */
+      
+      .header .menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        padding: 28px 20px;
+        position: relative;
+        user-select: none;
+      }
+      
+      .header .menu-icon .navicon {
+        background: #333;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 18px;
+      }
+      
+      .header .menu-icon .navicon:before,
+      .header .menu-icon .navicon:after {
+        background: #333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+      }
+      
+      .header .menu-icon .navicon:before {
+        top: 5px;
+      }
+      
+      .header .menu-icon .navicon:after {
+        top: -5px;
+      }
+      
+      /* menu btn */
+      
+      .header .menu-btn {
+        display: none;
+      }
+      
+      .header .menu-btn:checked ~ .menu {
+        max-height: 240px;
+      }
+      
+      .header .menu-btn:checked ~ .menu-icon .navicon {
+        background: transparent;
+      }
+      
+      .header .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+      }
+      
+      .header .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+      }
+      
+      .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+      .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+        top: 0;
+      }
+      
+      /* 48em = 768px */
+      
+      @media (min-width: 48em) {
+        .header li {
+          float: left;
+        }
+        .header li a {
+          padding: 20px 30px;
+        }
+        .header .menu {
+          clear: none;
+          float: right;
+          max-height: none;
+        }
+        .header .menu-icon {
+          display: none;
+        }
+      }
+      
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+      *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+      }
+      
+      body{
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      .main-footer {
+        padding: 70px 0;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #19302E;
+      }
+      
+      .main-footer ul {
+        list-style: none;
+      }
+      
+      .main-footer h1 {
+        font-size: 22px;
+        line-height: 117%;
+        color: #ffffff;
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+      
+      .main-footer h2 {
+        color: #ffffff;
+        font-weight: 500;
+      }
+      
+      .main-footer ul li a {
+        color: #ffffffcc;
+        text-decoration:none;
+      }
+      
+      footer {
+        background-color: #19302E;
+        border-top: 1px solid #6EB981;
+        font-size: 17px;
+        padding: 15px 5px;
+        color: #ffffff;
+        text-align: center;
+      }
+      
+      footer a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+      
+      .logoinfo p {
+        color: #6EB981;
+        font-size: 17px;
+        margin-top: 5px;
+      }
+      
+      .contact-details {
+        margin-top: 20px;
+      }
+      
+      .contact-details li {
+        list-style: none;
+        margin: 10px 0;
+      }
+      
+      .contact-details li a {
+        text-decoration:none;
+        color: #f1f1f1;
+      }
+      
+      .contact-details .fa {
+        color: #f1f1f1;
+        margin-right: 10px;
+      }
+      
+      .sociallogos{
+        padding:20px 0;
+      }
+      
+      .sociallogos .logobox a{
+        padding:0 10px;
+        text-decoration:none;
+        color:#ffffff;
+        font-size:22px;
+      }
+      
+      .com ul li{
+        padding:5px 0;
+      }
+      
+      @media only screen and (max-width: 749px) {
+        .main-footer {
+          padding:20px;
+          display:grid;
+          grid-template-columns: 1fr 1fr;
+        }
+          .info{
+            padding:20px 0;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .main-footer {
+          grid-template-columns: 1fr;
+        }
+        .sociallogos{
+          padding:20px 0;
+        }
+        .com{
+          padding:20px 0;
+        } 
+      
+      }
+    </style>
+</head>
+<body>
+   
+    <header class="header">
+        <a href="" class="logo">CSS Nav</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </header>
+
+
+      
+<section id="footer">
+    <div class="main-footer">
+      <div class="logoinfo" data-aos="fade-up">
+        <h2>Responsive Footer</h2>
+        <p>By Nikhil</p>
+  
+        <div class="contact-details">
+          <h1>Contact Us</h1>
+          <li>
+            <div class="fa fa-phone"></div><a href="tel:+919326048690">+91 0987654321</a></li>
+          <li>
+            <div class="fa fa-envelope"></div><a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a></li>
+          </li>
+      </div>
+    </div>
+    <div class="com " data-aos="fade-up">
+      <h1>About</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="info" data-aos="fade-up">
+      <h1>Social Media</h1>
+      <div class="sociallogos">
+        <div class="logobox">
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-linkedin"></a>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-youtube-play"></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  <footer>© Your Copyright 2021 All Rights Reserved</footer>
+  </section>
+</body>
+</html>
